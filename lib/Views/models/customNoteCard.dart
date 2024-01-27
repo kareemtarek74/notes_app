@@ -1,4 +1,4 @@
-// ignore: file_names
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -26,7 +26,7 @@ class customNoteCard extends StatelessWidget {
             child: Text(
               'Build your career with kareem tarek',
               style:
-                  TextStyle(color: Colors.black.withOpacity(.5), fontSize: 18),
+                  TextStyle(color: Colors.black.withOpacity(.3), fontSize: 18),
             ),
           ),
           trailing: IconButton(
@@ -40,7 +40,7 @@ class customNoteCard extends StatelessWidget {
           padding: const EdgeInsets.only(right: 16, top: 8),
           child: Text(
             'Jan 12 ,2024',
-            style: TextStyle(color: Colors.black.withOpacity(.5), fontSize: 16),
+            style: TextStyle(color: Colors.black.withOpacity(.3), fontSize: 16),
           ),
         )
       ]),

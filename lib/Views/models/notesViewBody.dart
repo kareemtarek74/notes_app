@@ -1,9 +1,9 @@
-// ignore: file_names, unnecessary_import
+// ignore_for_file: file_names
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Views/models/notesViewBodyAppBar.dart';
 
-import 'customNoteCard.dart';
+import 'customListView.dart';
 
 // ignore: camel_case_types
 class notesViewBody extends StatelessWidget {
@@ -14,7 +14,11 @@ class notesViewBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Column(
-        children: [customAppBar(), customNoteCard()],
+        children: [
+          SizedBox(height: 20),
+          customAppBar(),
+          Expanded(child: notesListView())
+        ],
       ),
     );
   }

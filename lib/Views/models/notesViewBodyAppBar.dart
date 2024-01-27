@@ -1,5 +1,5 @@
-// ignore: file_names, unnecessary_import
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'customSearchIcon.dart';
 
@@ -9,17 +9,23 @@ class customAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      titleSpacing: 0,
-      elevation: 0,
-      backgroundColor: Color(0xff303030),
-      title: const Text('NOTES'),
-      actions: const [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 3, vertical: 8),
-          child: customSearchIcon(),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(),
+      child: AppBar(
+        titleSpacing: 0,
+        elevation: 0,
+        backgroundColor: const Color(0xff303030),
+        title: const Text(
+          'NOTES',
+          style: TextStyle(fontSize: 25),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 4),
+            child: customSearchIcon(),
+          )
+        ],
+      ),
     );
   }
 }
