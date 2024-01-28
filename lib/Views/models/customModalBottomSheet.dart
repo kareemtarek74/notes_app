@@ -1,13 +1,19 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, camel_case_types
 
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
+import 'customTextField.dart';
+
 class customModalBottomSheet extends StatelessWidget {
   const customModalBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 14),
+      child: Column(
+        children: [customTextField()],
+      ),
+    );
   }
 }
