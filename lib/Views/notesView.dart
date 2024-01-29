@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Views/models/notesViewBody.dart';
 
-import 'models/customModalBottomSheet.dart';
+import 'models/customBottomSheet.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
