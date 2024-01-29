@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Views/models/customAppBar.dart';
+import 'package:flutter_application_4/Views/models/customTextField.dart';
 
 // ignore: camel_case_types
 class editNoteViewBody extends StatelessWidget {
@@ -17,6 +18,19 @@ class editNoteViewBody extends StatelessWidget {
             customAppBar(
               appBarTitle: 'Edit Note',
               appBarIcon: Icons.check,
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            customTextField(
+              hintText: 'Title',
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            customTextField(
+              hintText: 'Content',
+              maxLines: 5,
             )
           ],
         ));
