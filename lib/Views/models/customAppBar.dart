@@ -5,24 +5,30 @@ import 'customSearchIcon.dart';
 
 // ignore: camel_case_types
 class customAppBar extends StatelessWidget {
-  const customAppBar({super.key});
+  const customAppBar(
+      {super.key, required this.appBarTitle, required this.appBarIcon});
 
+  final String appBarTitle;
+  final IconData appBarIcon;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(),
       child: AppBar(
+        automaticallyImplyLeading: false,
         titleSpacing: 0,
         elevation: 0,
         backgroundColor: const Color(0xff303030),
-        title: const Text(
-          'NOTES',
-          style: TextStyle(fontSize: 25),
+        title: Text(
+          appBarTitle,
+          style: const TextStyle(fontSize: 25),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 4),
-            child: customSearchIcon(),
+            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 4),
+            child: customSearchIcon(
+              icon: appBarIcon,
+            ),
           )
         ],
       ),

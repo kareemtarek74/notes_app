@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class customSearchIcon extends StatelessWidget {
-  const customSearchIcon({super.key});
-
+  const customSearchIcon({super.key, required this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +14,7 @@ class customSearchIcon extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(.08),
           borderRadius: BorderRadius.circular(16)),
-      child: const Icon(Icons.search, size: 30),
+      child: Icon(icon, size: 30),
     );
   }
 }

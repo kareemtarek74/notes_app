@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_4/Views/models/notesViewBodyAppBar.dart';
+import 'package:flutter_application_4/Views/models/customAppBar.dart';
 
 import 'customListView.dart';
 
@@ -16,7 +15,7 @@ class notesViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 20),
-          customAppBar(),
+          customAppBar(appBarTitle: 'NOTES', appBarIcon: Icons.search),
           Expanded(child: notesListView())
         ],
       ),
