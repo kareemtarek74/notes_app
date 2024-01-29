@@ -12,7 +12,18 @@ class customModalBottomSheet extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 14),
       child: Column(
-        children: [customTextField()],
+        children: [
+          customTextField(
+            hintText: 'Title',
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          customTextField(
+            hintText: 'Content',
+            maxLines: 5,
+          )
+        ],
       ),
     );
   }
