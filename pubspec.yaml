@@ -45,6 +45,7 @@ dependencies:
   replay_bloc: ^0.2.5
   bloc_test: ^9.1.5
   meta: ^1.9.1
+  modal_progress_hud_nsn: ^0.5.1
   
   
   
