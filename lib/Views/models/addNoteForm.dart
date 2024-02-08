@@ -1,6 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:flutter_application_4/models/noteModel.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'customBotton.dart';
 import 'customTextField.dart';
@@ -50,6 +53,13 @@ class _addNoteFormState extends State<addNoteForm> {
             Ontap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+                // ignore: non_constant_identifier_names
+                var NoteModel = noteModel(
+                    title: title!,
+                    subTitle: subTitle!,
+                    date: DateTime.now().toString(),
+                    color: Colors.blue.value);
+                BlocProvider.of<AddNotesCubit>(context).addNote(NoteModel);
               } else {
                 autoValidateMode = AutovalidateMode.always;
                 setState(() {});

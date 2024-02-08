@@ -12,11 +12,12 @@ class customModalBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 14),
-      child: SizedBox(
-        height: 700,
-        child: SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => AddNotesCubit(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 14),
+        child: SizedBox(
+          height: 700,
           child: BlocConsumer<AddNotesCubit, AddNotesState>(
             listener: (context, state) {
               if (state is AddNotesFailure) {
@@ -30,7 +31,7 @@ class customModalBottomSheet extends StatelessWidget {
             builder: (context, state) {
               return ModalProgressHUD(
                   inAsyncCall: state is AddNotesLoading ? true : false,
-                  child: const addNoteForm());
+                  child: const SingleChildScrollView(child: addNoteForm()));
             },
           ),
         ),
