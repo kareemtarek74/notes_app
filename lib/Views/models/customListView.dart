@@ -1,6 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/cubits/readNotes/read_notes_cubit.dart';
+import 'package:flutter_application_4/models/noteModel.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'customNoteCard.dart';
 
@@ -10,17 +13,24 @@ class notesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(vertical: 5),
-            child: customNoteCard(),
-          );
-        },
-      ),
+    return BlocBuilder<ReadNotesCubit, ReadNotesState>(
+      builder: (context, state) {
+        List<noteModel> notes =
+            BlocProvider.of<ReadNotesCubit>(context).notes ?? [];
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15),
+          child: ListView.builder(
+            itemCount: notes.length,
+            padding: EdgeInsets.zero,
+            itemBuilder: (context, index) {
+              return const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: customNoteCard(),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }
