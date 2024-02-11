@@ -1,10 +1,12 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Views/editNoteView.dart';
+import 'package:flutter_application_4/models/noteModel.dart';
 
 // ignore: camel_case_types
 class customNoteCard extends StatelessWidget {
-  const customNoteCard({super.key});
+  const customNoteCard({super.key, required this.note});
+  final noteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,12 @@ class customNoteCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 12),
         decoration: BoxDecoration(
-            color: const Color(0xffFFCD7B),
-            borderRadius: BorderRadius.circular(16)),
+            color: Color(note.color), borderRadius: BorderRadius.circular(16)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           ListTile(
-            title: const Text(
-              'Flutter Tips',
-              style: TextStyle(
+            title: Text(
+              note.title,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 26,
               ),
@@ -33,7 +34,7 @@ class customNoteCard extends StatelessWidget {
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 16),
               child: Text(
-                'Build your career with kareem tarek',
+                note.subTitle,
                 style: TextStyle(
                     color: Colors.black.withOpacity(.3), fontSize: 18),
               ),
@@ -48,7 +49,7 @@ class customNoteCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 16, top: 8),
             child: Text(
-              'Jan 12 ,2024',
+              note.date,
               style:
                   TextStyle(color: Colors.black.withOpacity(.3), fontSize: 16),
             ),
