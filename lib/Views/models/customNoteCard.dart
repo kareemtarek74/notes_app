@@ -1,7 +1,9 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Views/editNoteView.dart';
+import 'package:flutter_application_4/cubits/readNotes/read_notes_cubit.dart';
 import 'package:flutter_application_4/models/noteModel.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 // ignore: camel_case_types
 class customNoteCard extends StatelessWidget {
@@ -42,6 +44,7 @@ class customNoteCard extends StatelessWidget {
             trailing: IconButton(
               onPressed: () {
                 note.delete();
+                BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
               },
               icon: const Icon(Icons.delete),
               color: Colors.black,
