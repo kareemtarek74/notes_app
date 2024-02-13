@@ -7,15 +7,23 @@ import '../../constants.dart';
 class customTextField extends StatelessWidget {
   // ignore: non_constant_identifier_names
   const customTextField(
-      {super.key, this.hintText, this.maxLines = 1, this.OnSaved});
+      // ignore: non_constant_identifier_names
+      {super.key,
+      this.hintText,
+      this.maxLines = 1,
+      // ignore: non_constant_identifier_names
+      this.OnSaved,
+      this.onChanged});
 
   final String? hintText;
   final int maxLines;
   // ignore: non_constant_identifier_names
   final void Function(String?)? OnSaved;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+        onChanged: onChanged,
         onSaved: OnSaved,
         validator: (value) {
           if (value?.isEmpty ?? true) {

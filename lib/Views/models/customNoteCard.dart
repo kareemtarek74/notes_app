@@ -16,7 +16,9 @@ class customNoteCard extends StatelessWidget {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(
           builder: (context) {
-            return const editNoteView();
+            return editNoteView(
+              note: note,
+            );
           },
         ));
       },
