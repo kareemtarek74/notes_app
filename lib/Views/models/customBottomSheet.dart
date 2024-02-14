@@ -31,7 +31,7 @@ class customModalBottomSheet extends StatelessWidget {
             return AbsorbPointer(
               absorbing: state is AddNotesLoading ? true : false,
               child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 32, horizontal: 14),
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 14),
                 child: SingleChildScrollView(child: addNoteForm()),
               ),
             );

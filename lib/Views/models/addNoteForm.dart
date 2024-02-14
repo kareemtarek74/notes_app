@@ -6,6 +6,7 @@ import 'package:flutter_application_4/models/noteModel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
+import 'ColorsListView.dart';
 import 'customBotton.dart';
 import 'customTextField.dart';
 
@@ -42,13 +43,17 @@ class _addNoteFormState extends State<addNoteForm> {
           ),
           customTextField(
             hintText: 'Content',
-            maxLines: 5,
+            maxLines: 4,
             OnSaved: (value) {
               subTitle = value;
             },
           ),
           const SizedBox(
-            height: 30,
+            height: 16,
+          ),
+          const ColorsListView(),
+          const SizedBox(
+            height: 16,
           ),
           BlocBuilder<AddNotesCubit, AddNotesState>(
             builder: (context, state) {
