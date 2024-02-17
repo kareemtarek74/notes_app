@@ -7,6 +7,8 @@ import 'package:flutter_application_4/cubits/readNotes/read_notes_cubit.dart';
 import 'package:flutter_application_4/models/noteModel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'colorsListViewForEditView.dart';
+
 // ignore: camel_case_types
 class editNoteViewBody extends StatefulWidget {
   const editNoteViewBody({super.key, required this.note});
@@ -61,7 +63,13 @@ class _editNoteViewBodyState extends State<editNoteViewBody> {
               },
               hintText: 'Edit Content',
               maxLines: 5,
-            )
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            ColorsListForEditNotesView(
+              note: widget.note,
+            ),
           ],
         ));
   }
